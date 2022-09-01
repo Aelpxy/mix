@@ -9,6 +9,9 @@ const Home: NextPage = () => {
           Demix | Find your rice
         </title>
       </Head>
+      <div>
+        Find your rice.
+      </div>
     </>
   )
 }

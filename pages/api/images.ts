@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { PrismaClient } from '@prisma/client'
 
-type Data = {
+type ResponseData = {
     statusCode: number
     message: string,
     payload: any,
@@ -10,7 +10,7 @@ type Data = {
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse<ResponseData>
 ) {
     const db = new PrismaClient();
 
