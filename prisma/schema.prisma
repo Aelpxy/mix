@@ -20,7 +20,7 @@ model Image {
 
   userId String
 
-  @@map("photos")
+  @@map("images")
 }
 
 model User {
