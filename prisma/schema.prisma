@@ -6,3 +6,33 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Image {
+  id            String @id @unique @default(cuid()) @map("_id")
+  title         String
+  description   String
+  imageURL      String
+  repositoryURL String
+  author        User   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+
+  @@map("photos")
+}
+
+model User {
+  id            String  @id @unique @default(cuid()) @map("_id")
+  username      String  @unique
+  email         String  @unique
+  password      String  @unique
+  emailVerified Boolean @default(false)
+  Images        Image[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
