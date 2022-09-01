@@ -13,7 +13,7 @@ model Image {
   description   String
   imageURL      String
   repositoryURL String
-  author        User   @relation(fields: [userId], references: [id])
+  account       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -25,14 +25,15 @@ model Image {
 
 model User {
   id            String  @id @unique @default(cuid()) @map("_id")
-  username      String  @unique
-  email         String  @unique
-  password      String  @unique
+  username      String
+  email         String
+  password      String
   emailVerified Boolean @default(false)
   Images        Image[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  @@unique([username, email])
   @@map("users")
 }
