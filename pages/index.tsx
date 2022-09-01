@@ -1,19 +1,15 @@
-import { NextPage } from 'next';
-import Head from 'next/head';
+import { NextPage } from "next";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>
-          Demix | Find your rice
-        </title>
+        <title>Demix | Find your rice</title>
       </Head>
-      <div>
-        Find your rice.
-      </div>
+      <h1 className="text-center text-3xl">Find your rice.</h1>
     </>
-  )
-}
+  );
+};
 
 export default Home;
