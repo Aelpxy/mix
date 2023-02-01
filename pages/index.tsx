@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-import ImageGallery from "../components/ImageGallery";
+import ImageGallery from "@components/ImageGallery";
 
 const Home: NextPage = () => {
   return (

@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-import { PrismaClient } from "@prisma/client";
+import db from "@lib/db";
 
 type ResponseData = {
   statusCode: number;
@@ -12,8 +11,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  const db = new PrismaClient();
-
   if (req.method != "GET") {
     res.status(405).send({
       statusCode: 405,
