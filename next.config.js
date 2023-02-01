@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [],
+    domains: [
+      "replicate.delivery",
+      "images.unsplash.com",
+      "source.unsplash.com"
+    ],
   },
 };
 

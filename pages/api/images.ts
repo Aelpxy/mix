@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import db from "@lib/db";
 
 type ResponseData = {
   statusCode: number;
@@ -20,8 +19,17 @@ export default async function handler(
   }
 
   res.status(200).json({
-    statusCode: 405,
-    message: "Method not allowed",
-    payload: await db.image.findMany(),
+    statusCode: 200,
+    message: "Success",
+    payload: [
+      "https://source.unsplash.com/random/1920x1080?city",
+      "https://source.unsplash.com/random/1920x1080?village",
+      "https://source.unsplash.com/random/1920x1080?river",
+      "https://source.unsplash.com/random/1920x1080?landscape",
+      "https://source.unsplash.com/random/1920x1080?sun",
+      "https://source.unsplash.com/random/1920x1080?moon",
+      "https://source.unsplash.com/random/1920x1080?nature",
+      "https://source.unsplash.com/random/1920x1080?hills"
+    ],
   });
 }
