@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import useSWR from "swr";
 import fetcher from "@lib/fetcher";
+import loader from "@lib/loader";
 
 const ImageGallery = () => {
   const { data, error, isLoading } = useSWR("/api/images", fetcher);
@@ -47,6 +48,7 @@ const ImageGallery = () => {
                 >
                   <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                     <Image
+                      loader={loader}
                       src={image}
                       placeholder="blur"
                       blurDataURL={image}
