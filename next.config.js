@@ -6,7 +6,7 @@ const nextConfig = {
     domains: [
       "replicate.delivery",
       "images.unsplash.com",
-      "source.unsplash.com"
+      "source.unsplash.com",
     ],
   },
 };

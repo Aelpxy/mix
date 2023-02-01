@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import useSWR from 'swr'
+import useSWR from "swr";
 import fetcher from "@lib/fetcher";
 
 const ImageGallery = () => {
-  const { data, error, isLoading } = useSWR('/api/images', fetcher)
+  const { data, error, isLoading } = useSWR("/api/images", fetcher);
 
   if (error) {
     return (
@@ -15,14 +15,16 @@ const ImageGallery = () => {
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
               <div className="flex items-center justify-between space-x-4">
                 <Link href={"/"}>
-                  <code className="text-3xl font-bold hover:underline">~/unexpected-error</code>
+                  <code className="text-3xl font-bold hover:underline">
+                    ~/unexpected-error
+                  </code>
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </>
-    )
+    );
   }
 
   return (
