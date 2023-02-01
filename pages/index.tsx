@@ -1,16 +1,13 @@
 import { NextPage } from "next";
-import Head from "next/head";
 
+import Layout from "@layouts/Layout";
 import ImageGallery from "@components/ImageGallery";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Head>
-        <title>Mix | Wallpapers</title>
-      </Head>
+    <Layout title="Mix">
       <ImageGallery />
-    </>
+    </Layout>
   );
 };
 
