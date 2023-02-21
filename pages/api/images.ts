@@ -27,7 +27,7 @@ export default async function handler(
     "https://source.unsplash.com/random/1920x1080?dubai",
     "https://source.unsplash.com/random/1920x1080?florence",
     "https://source.unsplash.com/random/1920x1080?venice",
-  ]
+  ];
 
   res.status(200).json({
     statusCode: 200,
