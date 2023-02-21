@@ -8,34 +8,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 model Image {
   id          String @id @unique @default(cuid()) @map("_id")
   title       String
-  description String
   imageURL    String
-  account     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  userId String
 
   @@map("images")
-  @@index([userId])
-}
-
-model User {
-  id       String  @id @unique @default(cuid()) @map("_id")
-  username String
-  email    String
-  password String
-  verified Boolean @default(false)
-  Images   Image[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([username, email])
-  @@map("users")
 }
