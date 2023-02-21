@@ -41,7 +41,7 @@ const ImageGallery = () => {
             <code className="text-2xl font-bold">loading...</code>
           ) : (
             <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-              {data.payload.map((image: any) => (
+              {data.payload.images.map((image: any) => (
                 <div
                   key={image}
                   className="group relative rounded bg-gray-50 border transition hover:border-black select-none"
